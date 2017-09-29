@@ -45,7 +45,7 @@
   }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
   .swiper-box
     width: 750px
     height: 300px

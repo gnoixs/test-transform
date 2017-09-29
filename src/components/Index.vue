@@ -2,7 +2,9 @@
   <div>
     <app-head></app-head>
     <app-slide></app-slide>
+    <app-marquee-words></app-marquee-words>
     <app-grid></app-grid>
+    <app-slide-second></app-slide-second>
 
   </div>
 </template>
@@ -10,12 +12,15 @@
 <script>
   import AppHead from './bases/Head'
   import AppSlide from './bases/slides'
-//  import AppMarqueeWords from './bases/MarqueeWords'
+
+  import AppSlideSecond from './bases/slides2'
+
+  import AppMarqueeWords from './bases/MarqueeWords'
   import AppGrid from './bases/Grid'
   import Marquee from "./bases/MarqueeWords.vue";
 
   export default {
-    name: 'index',
+    name: 'IndexComp',
     data(){
       return {
 
@@ -31,8 +36,9 @@
       Marquee,
       AppHead,
       AppSlide,
-      AppGrid
-//      AppMarqueeWords
+      AppGrid,
+      AppMarqueeWords,
+      AppSlideSecond
     },
     methods: {
       loadImage(){

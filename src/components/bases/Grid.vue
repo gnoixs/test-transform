@@ -1,7 +1,12 @@
 <template>
   <div class="grids">
     <ul>
-      <li><div><img src="../../assets/images/index/pk10.png" alt="北京PK拾"></div><span>北京PK拾</span></li>
+      <li>
+        <div>
+          <img src="../../assets/images/index/pk10.png" alt="北京PK拾">
+        </div>
+        <span>北京PK拾</span>
+      </li>
       <li><div><img src="../../assets/images/index/cqssc.png" alt="重庆时时彩"></div><span>重庆时时彩</span></li>
       <li><div><img src="../../assets/images/index/liuhecai.png" alt="香港六合彩"></div><span>香港六合彩</span></li>
       <li><div><img src="../../assets/images/index/pcdandan.png" alt="PC蛋蛋"></div><span>PC蛋蛋</span></li>
@@ -40,6 +45,8 @@
     height: 750px
     overflow: hidden
     border-left: 1px solid #d3d3d3
+    border-right: 1px solid #d3d3d3
+    box-sizing: border-box
     ul
       li
         margin: 0
@@ -49,6 +56,8 @@
         border-right: 1px solid #d3d3d3
         border-bottom: 1px solid #d3d3d3
         box-sizing: border-box
+        &:nth-child(3n)
+          border-right: none
         div
           width: 125px
           height: 125px
