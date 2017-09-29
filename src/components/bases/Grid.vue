@@ -40,36 +40,42 @@
 </script>
 
 <style lang="sass" scoped>
+  @import "../../assets/css/theme"
   .grids
-    width: 750px
-    height: 750px
+    width: 7.5rem
+    height: 7.5rem
     overflow: hidden
-    border-left: 1px solid #d3d3d3
-    border-right: 1px solid #d3d3d3
+    border-left: 0.01px solid $color-marquee-border-bottom-bg
+    border-right: 0.01px solid $color-marquee-border-bottom-bg
     box-sizing: border-box
+    position: absolute
+    top: 4.6rem
     ul
       li
         margin: 0
-        width: 246px
-        height: 246px
+        width: 2.46rem
+        height: 2.46rem
         display: inline-block
-        border-right: 1px solid #d3d3d3
-        border-bottom: 1px solid #d3d3d3
+        border-right: 0.01px solid $color-marquee-border-bottom-bg
+        border-bottom: 0.01px solid $color-marquee-border-bottom-bg
         box-sizing: border-box
         &:nth-child(3n)
           border-right: none
         div
-          width: 125px
-          height: 125px
-          margin: 40px auto
+          width: 1.25rem
+          height: 1.25rem
+          margin: 0.4rem auto
           overflow: hidden
-          margin-bottom: 10px
+          margin-bottom: 0.1rem
+          img
+            width: 1.25rem
+            height: 1.26rem
         span
           display: inline-block
           text-align: center
           width: 100%
-          height: 60px
-          font-size: 30px
+          height: 0.6rem
+          font-size: 0.3rem
 
 
 </style>

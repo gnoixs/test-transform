@@ -32,29 +32,32 @@
   }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
+  @import "../../assets/css/theme.sass"
   .box
-    width: 750px
-    height: 70px
-    background: #f5f5f5
-    border: 1px solid #d3d3d3
+    width: 7.5rem
+    height: 0.7rem
+    background: $color-marquee-bg
+    border: 0.01rem solid $color-marquee-border-bottom-bg
     box-sizing: border-box
+    position: absolute
+    top: 3.9rem
     span
       display: inline-block
-      width: 70px
-      height: 70px
-      background: red
+      width: 0.7rem
+      height: 0.7rem
       float: left
       background: url(../../assets/images/index/alarm.png) no-repeat center center
-      text-indent: -9999px
+      text-indent: -999rem
+      background-size: 50%
       &.right
         float: right
         background: url(../../assets/images/index/arrow-right.png) no-repeat center center
         background-size: 33%
     marquee
-      width: 595px
-      height: 70px
+      width: 5.95rem
+      height: 0.7rem
       display: inline-block
-      font-size: 30px
-      line-height: 70px
+      font-size: 0.3rem
+      line-height: 0.7rem
 </style>

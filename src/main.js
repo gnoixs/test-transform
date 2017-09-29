@@ -8,6 +8,9 @@ import Vue from 'vue'       // vue库
 import App from './App'
 import router from './router'   // 路由
 
+// 移动适配
+import '@/assets/scripts/adapter.js'
+
 // 解决手机端点击延迟300毫秒的问题
 import fastclick from 'fastclick'
 fastclick.attach(document.body);

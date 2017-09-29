@@ -1,19 +1,26 @@
 <template>
   <div class="head">
-    <h1><img src="../../assets/images/logo.png" alt="logo"/></h1>
+    <h1>
+      <img src="../../assets/images/logo.png" alt="logo"/>
+      <!--<img v-lazy="logoImg" alt="logo"/>-->
+    </h1>
     <ol>
-      <li @click="onLogin">登陆注册</li>
-      <li class="last" @click="onTestAccount">试玩</li>
+      <li @click="onLogin">
+        登陆注册
+      </li>
+      <li class="last"
+          @click="onTestAccount">
+            试玩
+      </li>
     </ol>
   </div>
 </template>
-
 <script>
   export default {
     name: 'head',
     data(){
       return {
-        logoImg: ''
+        logoImg: '@/assets/images/logo.png'
       }
     },
     created(){
@@ -36,34 +43,40 @@
 </script>
 
 <style lang="sass" scoped>
-  @import "../../assets/css/color.sass"
+  @import "../../assets/css/theme"
   .head
-    width: 750px
-    height: 90px
-    background: $c-head-bg
+    width: 7.5rem
+    height: 0.9rem
+    background: $color-head-bg
+    position: fixed
     h1
-      width: 262px
-      height: 80px
+      width: 2.62rem
+      height: 0.8rem
       position: relative
-      top: 5px
-      left: 10px
+      top: 0.05rem
+      left: 0.1rem
+      img
+        width: 100%
     ol
-      width: 288px
-      height: 73px
+      max-width: 4.6rem
+      height: 0.73rem
       position: absolute
-      right: 10px
-      top: 8.5px
+      right: 0.1rem
+      top: 0.085rem
       li
-        width: 177px
-        height: 73px
+        max-width: 2.6rem
+        padding: 0 0.2rem
+        height: 0.73rem
         display: inline-block
         text-align: center
-        font-size: 32px
-        line-height: 73px
-        color: $c-white
-        background: $c-login-btn-bg
-        border-radius: 15px
+        font-size: 0.32rem
+        line-height: 0.73rem
+        color: $color-body
+        background: $color-head-btn-bg
+        border-radius: 0.15rem
+        overflow: hidden
         &.last
-          width: 90px
-          margin-left: 10px
+          width: 0.9rem
+          margin-left: 0.1rem
+          float: right
 </style>

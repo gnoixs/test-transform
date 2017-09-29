@@ -1,6 +1,6 @@
 <template>
   <div class="loading">
-    <h1>
+    <h1 ref="h1">
         <span>加载中</span>
         <span v-text="loadingText" class="span2"></span>
     </h1>
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'loading',
+  name: 'loadComp',
   data () {
     return {
       loadingText : '...',
@@ -49,20 +49,20 @@ export default {
     width: 100%
     text-align: center
     box-sizing: border-box
-    padding-top: 500px
+    padding-top: 5rem
     h1
-      width: 144px
-      height: 60px
-      line-height: 60px
-      font-size: 36px
+      width: 1.44rem
+      height: 0.60rem
+      line-height: 0.60rem
+      font-size: 0.36rem
       margin: 0 auto
       overflow: hidden
       display: inline-block
       span
         display: inline-block
-        font-size: 36px
-        height: 60px
-        line-height: 60px
+        font-size: 0.36rem
+        height: 0.6rem
+        line-height: 0.6rem
         float: left
         font-weight: bold
 

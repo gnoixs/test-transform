@@ -1,27 +1,26 @@
 <template>
   <div class="swiper-box">
-  <swiper :options="swiperOption" ref="mySwiper">
+  <swiper :options="swiperOption" ref="mySwiper" v-show="ready">
     <!-- 轮播图 -->
     <swiper-slide>
-      <img src="../../assets/images/index/banner1.jpg" width="100%" height="300"/>
+      <img src="../../assets/images/index/banner1.jpg" @load="loadImg"/>
     </swiper-slide>
     <swiper-slide>
-      <img src="../../assets/images/index/banner2.jpg"/>
+      <img src="../../assets/images/index/banner2.jpg" @load="loadImg"/>
     </swiper-slide>
     <swiper-slide>
-      <img src="../../assets/images/index/banner3.jpg"/>
+      <img src="../../assets/images/index/banner3.jpg" @load="loadImg"/>
     </swiper-slide>
     <!--分页图标 -->
     <div class="swiper-pagination"  slot="pagination"></div>
   </swiper>
   </div>
 </template>
-
 <script>
   import { swiper, swiperSlide } from 'vue-awesome-swiper'
   require('swiper/dist/css/swiper.css')
   export default {
-    name: 'carrousel',
+    name: 'slidesComp',
     data() {
       return {
         swiperOption: {
@@ -29,7 +28,8 @@
           direction : 'horizontal',
           pagination : '.swiper-pagination',
           loop: true
-        }
+        },
+        ready: false
       }
     },components: {
       swiper,
@@ -41,17 +41,29 @@
       }
     },
     mounted() {
+    },
+    methods:{
+      loadImg(){
+        if(this.ready){
+          return
+        }
+        this.ready = true;
+      }
     }
   }
 </script>
 
 <style lang="sass" scoped>
   .swiper-box
-    width: 750px
-    height: 300px
+    width: 7.5rem
+    height: 3rem
     overflow: hidden
+    position: absolute
+    top: 0.9rem
+    img
+      width: 100%
+      height: 3rem
     .swiper-pagination-bullet
-      width: 15px
-      height: 15px
-
+      width: 0.15rem
+      height: 0.15rem
 </style>

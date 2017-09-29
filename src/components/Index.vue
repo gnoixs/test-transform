@@ -1,23 +1,24 @@
 <template>
   <div>
-    <app-head></app-head>
-    <app-slide></app-slide>
-    <app-marquee-words></app-marquee-words>
-    <app-grid></app-grid>
-    <app-slide-second></app-slide-second>
+    <!--<app-head></app-head>-->
+    <index-slide></index-slide>
+    <index-marquee></index-marquee>
+    <index-grid></index-grid>
+    <!--<app-slide-second></app-slide-second>-->
 
   </div>
 </template>
 
 <script>
-  import AppHead from './bases/Head'
-  import AppSlide from './bases/slides'
+  import IndexSlide from './bases/slides'     // 轮播图
+  import IndexMarquee from './bases/Marquee'  // 跑马灯
+  import IndexGrid from './bases/Grid'
 
-  import AppSlideSecond from './bases/slides2'
+//  import AppSlideSecond from './bases/slides2'
+//
 
-  import AppMarqueeWords from './bases/MarqueeWords'
-  import AppGrid from './bases/Grid'
-  import Marquee from "./bases/MarqueeWords.vue";
+
+//  import Marquee from "./bases/Marquee.vue";
 
   export default {
     name: 'IndexComp',
@@ -33,25 +34,18 @@
 
     },
     components: {
-      Marquee,
-      AppHead,
-      AppSlide,
-      AppGrid,
-      AppMarqueeWords,
-      AppSlideSecond
+      IndexSlide,
+      IndexMarquee,
+      IndexGrid
     },
     methods: {
       loadImage(){
-        console.log(1);
+        //console.log(1);
       }
     }
   }
 </script>
 
 <style lang="sass" scoped>
-  swiper
-    width: 750px
-    height: 300px
-    background: red
-    display: inline-block
+
 </style>
