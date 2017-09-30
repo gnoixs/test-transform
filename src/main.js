@@ -9,7 +9,9 @@ import App from './App'
 import router from './router'   // 路由
 
 // 移动适配
-import '@/assets/scripts/adapter.js'
+//import '@/assets/scripts/adapter.js'
+import Adapter from '@/assets/scripts/adapter'
+Adapter(window,window.document);
 
 // 解决手机端点击延迟300毫秒的问题
 import fastclick from 'fastclick'
@@ -20,6 +22,11 @@ import vLazy  from 'vue-lazyload'
 Vue.use(vLazy,{
   loading: require('@/assets/logo.png')
 })
+
+// Axios异步请求
+import Axios from '@/assets/scripts/asyncAxios'
+Vue.prototype.$http = Axios
+
 
 // 加载基础css
 import '@/assets/css/base.sass'
@@ -34,3 +41,12 @@ new Vue({
   template: '<App/>',
   components: { App }
 })
+
+// 路由切换检查
+router.beforeEach((to, from, next) => {
+  // 需要登录才可以访问的页面
+  if(to.meta.requireAuth){
+    //sessionStorage.getItem('user')
+  }
+  next();
+});

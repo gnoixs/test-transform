@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import AppHeader from '@/components/bases/Head'
+  import AppHeader from '@/components/bases/common/Head'
 export default {
   name: 'appComp',
   data(){

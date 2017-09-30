@@ -3,13 +3,13 @@
   <swiper :options="swiperOption" ref="mySwiper" v-show="ready">
     <!-- 轮播图 -->
     <swiper-slide>
-      <img src="../../assets/images/index/banner1.jpg" @load="loadImg"/>
+      <img src="../../../assets/images/index/banner1.jpg" @load="loadImg"/>
     </swiper-slide>
     <swiper-slide>
-      <img src="../../assets/images/index/banner2.jpg" @load="loadImg"/>
+      <img src="../../../assets/images/index/banner2.jpg" @load="loadImg"/>
     </swiper-slide>
     <swiper-slide>
-      <img src="../../assets/images/index/banner3.jpg" @load="loadImg"/>
+      <img src="../../../assets/images/index/banner3.jpg" @load="loadImg"/>
     </swiper-slide>
     <!--分页图标 -->
     <div class="swiper-pagination"  slot="pagination"></div>

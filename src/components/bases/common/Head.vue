@@ -1,7 +1,7 @@
 <template>
   <div class="head">
     <h1>
-      <img src="../../assets/images/logo.png" alt="logo"/>
+      <img src="../../../assets/images/logo.png" alt="logo"/>
       <!--<img v-lazy="logoImg" alt="logo"/>-->
     </h1>
     <ol>
@@ -16,6 +16,8 @@
   </div>
 </template>
 <script>
+  import getDemo from '@/api/demo'
+  import { setStorage } from '@/assets/scripts/storage'
   export default {
     name: 'head',
     data(){
@@ -36,19 +38,28 @@
       },
       //试玩账号
       onTestAccount(){
-        alert('test')
+          getDemo().then((res) => {
+            // 存储对象
+            let userInfo = {
+                username: res.data.username,
+                money: res.data.money,
+                oid: res.data.oid
+            }
+            setStorage('userInfo',userInfo,sessionStorage);
+          });
       }
     }
   }
 </script>
 
 <style lang="sass" scoped>
-  @import "../../assets/css/theme"
+  @import "../../../assets/css/theme"
   .head
     width: 7.5rem
     height: 0.9rem
     background: $color-head-bg
     position: fixed
+    z-index: 10
     h1
       width: 2.62rem
       height: 0.8rem
