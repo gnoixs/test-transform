@@ -45,7 +45,7 @@
                 money: res.data.money,
                 oid: res.data.oid
             }
-            setStorage('userInfo',userInfo,sessionStorage);
+            setStorage(sessionStorage,'userInfo',userInfo);
           });
       }
     }
