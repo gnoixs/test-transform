@@ -12,11 +12,17 @@ export default new Router({
     {
       path: '/',
       name: 'load',
-      component: Loading
+      component: Loading,
+      meta:{
+        requireAuth: false
+      }
     }, {
       path: '/index',
       name: 'index',
-      component: Index
+      component: Index,
+      meta: {
+        requireAuth:false
+      }
     }
   ]
 })
