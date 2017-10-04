@@ -5,6 +5,7 @@
     <index-grid></index-grid>
     <index-slide></index-slide>
     <index-footer></index-footer>
+    <app-menu></app-menu>
   </div>
 </template>
 
@@ -14,6 +15,8 @@
   import IndexGrid from './bases/index/Grid'         // 九宫格
   import IndexSlide from './bases/index/Slides'      // 优惠活动
   import IndexFooter from './bases/index/Footer'      // 优惠活动
+
+  import AppMenu from './bases/common/Menu'          // 右侧导航栏
 
 
 
@@ -34,7 +37,8 @@
       IndexMarquee,
       IndexGrid,
       IndexSlide,
-      IndexFooter
+      IndexFooter,
+      AppMenu
     },
     methods: {
 
