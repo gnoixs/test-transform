@@ -1,8 +1,9 @@
 <template>
-  <div class="menu">
+  <div class="menu" v-if="showMenu">
     <p></p>
     <ul>
-      <li><img src="../../../assets/images/icons/greet.png" alt="hello user"/><span>你好,<strong>demodemodemodemodemodemo</strong></span></li>
+      <li><img src="../../../assets/images/icons/greet.png"
+               alt="hello user"/><span>你好,<strong>demodemodemodemodemodemo</strong></span></li>
       <li><img src="../../../assets/images/icons/balacne.png" alt="balance"/><span>账户余额<i>￥2000</i></span></li>
       <li><img src="../../../assets/images/icons/load.png" alt="load"/><span>我要充值</span></li>
       <li><img src="../../../assets/images/icons/deposit.png" alt="deposit"/><span>我要提现</span></li>
@@ -17,13 +18,16 @@
 </template>
 
 <script>
-  export default {
-      name: 'menuComp',
-      data(){
-          return {
+  import { mapGetters } from 'vuex'
 
-          }
-      }
+  export default {
+    name: 'menuComp',
+    data() {
+      return {}
+    },
+    computed: {
+      ...mapGetters(['showMenu'])
+    }
   }
 </script>
 

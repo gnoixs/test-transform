@@ -7,11 +7,12 @@ import 'babel-polyfill'
 import Vue from 'vue'       // vue库
 import App from './App'
 import router from './router'   // 路由
+import store from './store/index'   // store
 
 // 移动适配
 //import '@/assets/scripts/adapter.js'
 import Adapter from '@/assets/scripts/adapter'
-Adapter(window,window.document);
+Adapter(window, window.document);
 
 // 解决手机端点击延迟300毫秒的问题
 import fastclick from 'fastclick'
@@ -38,6 +39,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })

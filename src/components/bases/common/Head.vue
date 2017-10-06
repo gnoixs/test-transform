@@ -9,7 +9,7 @@
         <img src="../../../assets/images/index/user.png" alt="user" v-if="init.showAvator"/>{{init.loginText}}
       </li>
       <li class="menu"
-          @click="onShowMenu" v-if="init.showAvator">
+          @click="toggleMenu" v-if="init.showAvator">
         <img src="../../../assets/images/index/side-menu.png" alt="menu">
       </li>
       <li class="last"
@@ -22,8 +22,9 @@
 <script>
   import getDemo from '@/api/demo'
   import { getStorage, setStorage } from '@/assets/scripts/storage'
+  import { mapActions } from 'vuex'
   export default {
-    name: 'head',
+    name: 'headComp',
     data(){
       return {
         //logoImg: '@/assets/images/logo.png',
@@ -47,6 +48,9 @@
       }
     },
     methods: {
+      ...mapActions({
+        toggleMenu: 'toggleMenu'
+      }),
       //登陆界面
       onLogin(){
           if(this.init.state == 'demoOut'){   // 登录按钮
@@ -79,9 +83,6 @@
               this.$router.push('/rigister')
           }
 
-      },
-      // 菜单按钮
-      onShowMenu(){
       }
     }
   }

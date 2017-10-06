@@ -18,6 +18,8 @@
 
   import AppMenu from './bases/common/Menu'          // 右侧导航栏
 
+  import { mapGetters } from 'vuex'
+
 
 
   export default {
@@ -27,7 +29,10 @@
       }
     },
     created(){
+      /*...mapGetters({
 
+      })*/
+      //console.log(this.$store.state.showMenu)
     },
     mounted(){
 
