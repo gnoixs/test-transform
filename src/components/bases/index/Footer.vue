@@ -1,19 +1,18 @@
 <template>
   <div class="footer">
-   <!-- <div>-->
-      <img src="../../../assets/images/index/ways-to-pay.png" alt="支付方式"/>
-    <!--</div>-->
-    <p>COPYRLGHT © 2012阿里彩票ALCP66.COM</p>
-    <p>ALL RLGHTS RESEVERD</p>
+    <img v-lazy="WayToPay" alt="支付方式"/>
+    <p>COPYRIGHT © 2012-2017</p>
+    <p>ALL RIGHTS RESERVED</p>
   </div>
 </template>
 
 <script>
+  import WayToPay from '@/assets/images/index/ways-to-pay.png';
   export default {
       name: 'footerComp',
       data(){
           return {
-
+            WayToPay: WayToPay
           }
       }
   }
@@ -24,8 +23,6 @@
   .footer
     width: 7.5rem
     height: 2.0rem
-    position: absolute
-    top: 15.6rem
     background: $color-footer-bg
     img
       width: 6.65rem

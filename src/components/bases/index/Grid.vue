@@ -1,35 +1,72 @@
 <template>
-  <div class="grids">
+  <div class="grids" :gridList="gridList">
     <ul>
-      <li><div><img src="../../../assets/images/index/pk10.png" alt="北京PK拾"></div><span>北京PK拾</span></li>
-      <li><div><img src="../../../assets/images/index/cqssc.png" alt="重庆时时彩"></div><span>重庆时时彩</span></li>
-      <li><div><img src="../../../assets/images/index/liuhecai.png" alt="香港六合彩"></div><span>香港六合彩</span></li>
-      <li><div><img src="../../../assets/images/index/pcdandan.png" alt="PC蛋蛋"></div><span>PC蛋蛋</span></li>
-      <li><div><img src="../../../assets/images/index/hppay10.png" alt="广东快乐十分"></div><span>广东快乐十分</span></li>
-      <li><div><img src="../../../assets/images/index/lucky-boat.png" alt="幸运飞艇"></div><span>幸运飞艇</span></li>
-      <li><div><img src="../../../assets/images/index/lucky-farm.png" alt="重庆幸运农场"></div><span>重庆幸运农场</span></li>
-      <li><div><img src="../../../assets/images/index/ag.png" alt="真人视讯"></div><span>真人视讯</span></li>
-      <li><div><img src="../../../assets/images/index/custom-service.png" alt="在线客服"></div><span>在线客服</span></li>
+      <li v-for="item in gridList" @click="onLiClick">
+        <div>
+          <img v-lazy="item.src" alt="item.text">
+        </div>
+        <span v-text="item.text"></span>
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
+  // import images
+  import PK10 from '@/assets/images/index/pk10.png'
+  import Cqssc from '@/assets/images/index/cqssc.png'
+  import LiuHeCai from '@/assets/images/index/liuhecai.png'
+  import PcDanDan from '@/assets/images/index/pcdandan.png'
+  import Hppay10 from '@/assets/images/index/hppay10.png'
+  import LuckyBoat from '@/assets/images/index/lucky-boat.png'
+  import LuckyFarm from '@/assets/images/index/lucky-farm.png'
+  import Ag from '@/assets/images/index/ag.png'
+  import CustomService from '@/assets/images/index/custom-service.png'
+
   export default {
     name: 'grid',
     data(){
-      return {
-
+      return {}
+    },
+    props: {
+      gridList: {
+        type: Array,
+        default: function () {
+          return [{
+            src: PK10,
+            text: '北京PK拾'
+          }, {
+            src: Cqssc,
+            text: '重庆时时彩'
+          }, {
+            src: LiuHeCai,
+            text: '香港六合彩'
+          }, {
+            src: PcDanDan,
+            text: 'PC蛋蛋'
+          }, {
+            src: Hppay10,
+            text: '广东快乐十分'
+          }, {
+            src: LuckyBoat,
+            text: '幸运飞艇'
+          }, {
+            src: LuckyFarm,
+            text: '重庆幸运农场'
+          }, {
+            src: Ag,
+            text: '真人视讯'
+          }, {
+            src: CustomService,
+            text: '在线客服'
+          }]
+        }
       }
     },
-    created(){
-
-    },
-    mounted(){
-
-    },
-    methods:{
-
+    methods: {
+      onLiClick(){
+          console.log();
+      }
     }
   }
 </script>
@@ -38,13 +75,11 @@
   @import "../../../assets/css/theme"
   .grids
     width: 7.5rem
-    height: 7.5rem
+    height: 7.4rem
     overflow: hidden
     border-left: 1px solid $color-marquee-border-bottom-bg
     border-right: 1px solid $color-marquee-border-bottom-bg
     box-sizing: border-box
-    position: absolute
-    top: 4.6rem
     ul
       li
         margin: 0

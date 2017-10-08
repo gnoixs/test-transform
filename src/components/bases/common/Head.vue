@@ -14,7 +14,7 @@
       </li>
       <li class="last"
           @click="onTestAccount">
-            {{init.demoText}}
+        {{init.demoText}}
       </li>
     </ol>
   </div>
