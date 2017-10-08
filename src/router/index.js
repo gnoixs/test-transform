@@ -1,9 +1,23 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Loading from '@/components/Loading'
-
-import Index from '@/components/Index'
-
+// loading
+const Loading = resolve => {
+  import ('@/components/Loading').then(module => {
+    resolve(module);
+  })
+}
+// index
+const Index = resolve => {
+  import ('@/components/Index').then(module => {
+    resolve(module);
+  })
+}
+// register
+const Register = resolve => {
+  import ('@/components/Register').then(module => {
+    resolve(module);
+  })
+}
 
 Vue.use(Router)
 
@@ -14,7 +28,7 @@ export default new Router({
       path: '/',
       name: 'load',
       component: Loading,
-      meta:{
+      meta: {
         requireAuth: false
       }
     }, {
@@ -22,7 +36,14 @@ export default new Router({
       name: 'index',
       component: Index,
       meta: {
-        requireAuth:false
+        requireAuth: false
+      }
+    }, {
+      path: '/register',
+      name: 'register',
+      component: Register,
+      meta: {
+        requireAuth: false
       }
     }
   ]

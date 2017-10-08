@@ -3,3 +3,4 @@
  */
 
 export const showMenu = state => state.showMenu
+export const headerState = state => state.headerState

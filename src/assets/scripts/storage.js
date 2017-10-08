@@ -10,7 +10,7 @@ export function setStorage(storageType,itemName, item) {
 }
 // 读取数据
 export function getStorage(storageType,itemName){
-  storageType ? JSON.parse(storageType.getItem(itemName)): ThrowErr(storageType);
+  return storageType ? JSON.parse(storageType.getItem(itemName)): ThrowErr(storageType);
 }
 // 删除条数据
 export function removeStorage(storageType,itemName){

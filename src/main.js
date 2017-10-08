@@ -21,7 +21,7 @@ fastclick.attach(document.body);
 // 图片懒加载
 import vLazy  from 'vue-lazyload'
 Vue.use(vLazy,{
-  loading: require('@/assets/logo.png')
+  loading: require('@/assets/images/timg.gif')
 })
 
 // Axios异步请求
