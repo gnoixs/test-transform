@@ -4,3 +4,4 @@ import * as types from './mutation_types'
 export const toggleMenu = function({commit}){
   commit(types.TOGGLE_MENU)
 }
+

@@ -1,12 +1,20 @@
 <template>
   <div class="index">
+<!-- 首页头部 -->
+    <index-header></index-header>
+<!-- 头部占位符 -->
+    <app-holder></app-holder>
 <!-- 顶部轮播图 -->
     <index-banner></index-banner>
 <!-- 跑马灯单行 -->
     <index-one-line>
-      <span><img v-lazy="imagesList.Alarm"/></span>
+      <span>
+        <img v-lazy="imagesList.Alarm"/>
+      </span>
       <marquee scrollamount="3">{{ marqueeText }}</marquee>
-      <span class="right"><img v-lazy="imagesList.ArrowRight"/></span>
+      <span class="right">
+        <img v-lazy="imagesList.ArrowRight"/>
+      </span>
     </index-one-line>
 <!-- 九宫格 -->
     <index-grid></index-grid>
@@ -26,9 +34,15 @@
 <!-- 底部单行-->
     <index-one-line :boxMargin="boxMargin">
       <ol>
-        <li><a href="#" title="app下载">APP下载</a></li>
-        <li><a href="#" title="触屏版" class="active">触屏版</a></li>
-        <li><a href="#" title="电脑版">电脑版</a></li>
+        <li>
+          <a href="#" title="app下载">APP下载</a>
+        </li>
+        <li>
+          <a href="#" title="触屏版" class="active">触屏版</a>
+        </li>
+        <li>
+          <a href="#" title="电脑版">电脑版</a>
+        </li>
       </ol>
     </index-one-line>
 <!-- 页脚 -->
@@ -39,11 +53,13 @@
 </template>
 
 <script>
-  import IndexBanner from './bases/index/Banner'     // 轮播图
-  import IndexOneLine from './bases/index/OneLine'   // 跑马灯
-  import IndexGrid from './bases/index/Grid'         // 九宫格
-  import IndexFooter from './bases/index/Footer'      // 底部
-  import AppMenu from './bases/common/Menu'          // 右侧导航栏
+  import IndexHeader from '@/components/bases/common/IndexHead'   //首页头部
+  import AppHolder from '@/components/bases/common/Holder'   //头部占位
+  import IndexBanner from '@/components/bases/index/Banner'     // 轮播图
+  import IndexOneLine from '@/components/bases/index/OneLine'   // 跑马灯
+  import IndexGrid from '@/components/bases/index/Grid'         // 九宫格
+  import IndexFooter from '@/components/bases/index/Footer'      // 底部
+  import AppMenu from '@/components/bases/common/Menu'          // 右侧导航栏
 
   import { mapGetters, mapMutations } from 'vuex'
 
@@ -119,6 +135,8 @@
 
     },
     components: {
+      IndexHeader,
+      AppHolder,
       IndexBanner,
       IndexOneLine,
       IndexGrid,
@@ -136,6 +154,5 @@
 <style lang="sass" scoped>
 .index
   position: relative
-  padding-top: .9rem
   box-sizing: border-box
 </style>
