@@ -1,40 +1,28 @@
 <template>
-  <div class="head" v-if="headerState.type != 'loading'">
+  <div class="head">
     <!-- 首页的头部样式 -->
-    <div class="indexDiv" v-if="headerState.type == 'index'">
+    <div class="indexDiv">
       <h1>
         <img v-lazy="imagesList.Logo" alt="logo"/>
       </h1>
-      <ol :class="{'margin72': init.showAvator}">
+      <ol :class="{'right2': init.state == 'demoOut'}">
         <li @click="onLogin">
-          <img v-lazy="imagesList.User" alt="user" v-if="init.showAvator"/>{{init.loginText}}
+          <img v-lazy="imagesList.User"
+               alt="user"
+               v-if="init.showAvator"/>
+          {{init.loginText}}
         </li>
-        <li class="last"
-            @click="onTestAccount">
+        <li class="menu"
+            @click="toggleMenu"
+            v-if="init.showAvator">
+          <img v-lazy="imagesList.SideMenu"
+               alt="menu">
+        </li>
+        <li @click="onTestAccount">
           {{init.demoText}}
         </li>
       </ol>
     </div>
-    <!-- 普通 title-->
-    <div class="normalDiv" v-if="headerState.type == 'normal'">
-      <span @click.stop="onGoBack">
-        <img v-lazy="imagesList.Back" alt="back"/>
-      </span>
-      <h1>{{ headerState.title }}
-        <img v-lazy="imagesList.DropDown"
-             alt="dropdown"
-             @click.stop="onGameList"
-              v-if="headerState.dropDown"/>
-      </h1>
-    </div>
-    <!-- 右侧弹出菜单icon -->
-    <ul v-if="(headerState.type == 'normal' && headerState.dropDown) || headerState.type == 'index'">
-      <li class="menu"
-          @click="toggleMenu"
-          v-if="init.showAvator">
-        <img v-lazy="imagesList.SideMenu" alt="menu">
-      </li>
-    </ul>
   </div>
 </template>
 <script>
@@ -45,8 +33,6 @@
   import Logo from '@/assets/images/logo.png'
   import User from '@/assets/images/icons/user.png'
   import SideMenu from '@/assets/images/icons/side-menu.png'
-  import DropDown from '@/assets/images/icons/dropdown.png'
-  import Back from '@/assets/images/icons/back.png'
 
   export default {
     name: 'headComp',
@@ -61,14 +47,9 @@
         imagesList: {
           Logo: Logo,
           User: User,
-          SideMenu: SideMenu,
-          DropDown: DropDown,
-          Back: Back
+          SideMenu: SideMenu
         }
       }
-    },
-    computed:{
-      ...mapGetters(['headerState'])
     },
     created() {
       let user = getStorage(sessionStorage, 'userInfo');
@@ -85,15 +66,13 @@
       ...mapActions({
         toggleMenu: 'toggleMenu'
       }),
-      ...mapMutations({
-        changeTitle: 'CHANGE_TITLE'
-      }),
       //登陆界面
       onLogin() {
         if (this.init.state == 'demoOut') {   // 登录按钮
           this.$router.push('/login');
         } else {    // 用户名显示按钮
           // 变成显示用户名的框
+          this.$router.push('/profile')
         }
       },
       //试玩账号
@@ -119,16 +98,7 @@
         } else {      //注册按钮
           this.$router.push('/register')
         }
-      },
-      // 后退
-      onGoBack(){
-        this.$router.go(-1);
-      },
-      // 显示游戏选择菜单
-      onGameList(){
-        console.log('show game list...')
       }
-
     }
   }
 </script>
@@ -156,10 +126,10 @@
         max-width: 4.6rem
         height: .73rem
         position: absolute
-        right: .1rem
+        right: 0
         top: .085rem
-        &.margin72
-          margin-right: .72rem
+        &.right2
+          right: .2rem
         li
           max-width: 2.6rem
           padding: 0 .1rem
@@ -173,61 +143,16 @@
           border-radius: .15rem
           overflow: hidden
           img
-            width: .39rem
-            height: .45rem
-            margin: .14rem .05rem
+            width: .3rem
+            height: .3rem
+            margin: .21rem .05rem
             float: left
-          &.last
-            width: .9rem
-            margin-left: .1rem
+          &.menu
             float: right
-    .normalDiv
-      span
-        display: inline-block
-        width: .9rem
-        height: .9rem
-        position: absolute
-        left: 0
-        top: 0
-        z-index: 2
-        img
-          width: .22rem
-          height: .37rem
-          margin: .265rem .34rem
-      h1
-        width: 7.5rem
-        height: .9rem
-        line-height: .9rem
-        position: absolute
-        top: 0
-        left: 0
-        text-align: center
-        font-size: .33rem
-        color: $color-body
-        font-weight: bold
-        img
-          display: inline-block
-          width: .4rem
-          height: .4rem
-          position: relative
-          top: .09rem
-          left: .1rem
-          border-radius: .05rem
-    ul
-      .menu
-        width: .73rem
-        height: .73rem
-        float: right
-        padding: 0
-        background: none
-        margin-left: .1rem
-        position: absolute
-        top: .1rem
-        right: .05rem
-        z-index: 2
-        img
-          width: .43rem
-          height: .35rem
-          margin: .18rem 0.15rem
-
+            background: none
+            border: none
+            img
+              width: .43rem
+              height: .35rem
+              margin: .18rem 0.15rem
 </style>

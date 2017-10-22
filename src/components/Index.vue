@@ -53,7 +53,7 @@
 </template>
 
 <script>
-  import IndexHeader from '@/components/bases/common/IndexHead'   //首页头部
+  import IndexHeader from '@/components/bases/index/IndexHead'   //首页头部
   import AppHolder from '@/components/bases/common/Holder'   //头部占位
   import IndexBanner from '@/components/bases/index/Banner'     // 轮播图
   import IndexOneLine from '@/components/bases/index/OneLine'   // 跑马灯
@@ -115,24 +115,9 @@
             'margin-top': '0.1rem'
         },
         // 跑马灯文字
-        marqueeText: '尊敬的会员：您好，为了回馈广大会员长期以来对阿理彩票的支持，平台已上调双面盘赔率为1.998，上调定位胆赔率为9.98。其他赔率均保持不变。请各位新老会员相互转达积极参与体验，谢谢尊敬的会员:您好,由于近期部分QQ及QQ群被停用，给您带来不便，敬请谅解。为方便更好的为您提供服务，请添加客服QQ:513339990或QQ群:551669630，方便您随时咨询。若有变动会及时更新公告，敬请关注。尊敬的会员：您好，对于我司近期域名被劫持给您造成的困扰，我们深感抱歉。此问题现已解决，如发现打开平台网址后，跳转到非阿理彩票官网页面，请使用https://alcp88.com或https://alcp99.com等https防劫持线路进行游戏。给您带来不便，敬请谅解。尊敬的会员：为防止玩家恶意刷水平台禁止同一IP同期同种玩法累计投注超过总注单70%，两面盘不可同时投注大小/单双/龙虎。冠亚和最高只能够下注12个和值. 若发现违规且警告无效游戏平台将给予封号，并没收账户资金。感谢您的理解与配合。如有疑问请咨询客服！',
+        marqueeText: '尊敬的会员：您好，为了回馈广大会员长期以来对阿理彩票的支持，平台已上调双面盘赔率为1.998，上调定位胆赔率为9.98。其他赔率均保持不变。请各位新老会员相互转达积极参与体验，谢谢尊敬的会员:您好,由于近期部分QQ及QQ群被停用，给您带来不便，敬请谅解。为方便更好的为您提供服务，请添加客服QQ:513339990或QQ群:551669630，方便您随时咨询。若有变动会及时更新公告，敬请关注。尊敬的会员：您好，对于我司近期域名被劫持给您造成的困扰，我们深感抱歉。此问题现已解决，如发现打开平台网址后，跳转到非阿理彩票官网页面，请使用https://alcp88.com或https://alcp99.com等https防劫持线路进行游戏。给您带来不便，敬请谅解。尊敬的会员：为防止玩家恶意刷水平台禁止同一IP同期同种玩法累计投注超过总注单70%，两面盘不可同时投注大小/单双/龙虎。冠亚和最高只能够下注12个和值. 若发现违规且警告无效游戏平台将给予封号，并没收账户资金。感谢您的理解与配合。如有疑问请咨询客服！'
         // 头部状态
-        header_state:{
-          type: 'index',
-          title: '',
-          dropDown: false
-        }
       }
-    },
-    created(){
-      console.log(122);
-      this.changeHeader(this.header_state);
-    },
-    computed: {
-      ...mapGetters(['headerState'])
-    },
-    mounted(){
-
     },
     components: {
       IndexHeader,
@@ -144,9 +129,6 @@
       AppMenu
     },
     methods: {
-      ...mapMutations({
-        changeHeader: 'CHANGE_HEADER'
-      })
     }
   }
 </script>

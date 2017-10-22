@@ -8,30 +8,13 @@
 </template>
 
 <script>
-  import { mapGetters,mapMutations } from 'vuex'
 export default {
   name: 'loadComp',
   data () {
     return {
       loadingText : '...',
-      interval : null,
-      header_state:{
-        type: 'loading',
-        title: '',
-        dropDown: false
-      }
+      interval : null
     }
-  },
-  created(){
-    this.changeHeader(this.header_state)
-  },
-  computed:{
-    ...mapGetters(['headerState'])
-  },
-  methods:{
-    ...mapMutations({
-      changeHeader: 'CHANGE_HEADER'
-    })
   },
   mounted(){
     // 三个点样式
